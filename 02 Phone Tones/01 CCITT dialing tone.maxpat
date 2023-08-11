@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 307.0, 106.0, 1096.0, 678.0 ],
+		"rect" : [ 307.0, 106.0, 690.0, 678.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,37 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-13",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 13.0, 11.0, 662.0, 20.0 ],
+					"text" : "PRACTICAL 2 - PHONE TONES",
+					"textjustification" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 13.0, 30.0, 662.0, 20.0 ],
+					"text" : "CCITT dialing tone",
+					"textjustification" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"automatic" : 1,
 					"id" : "obj-9",
 					"maxclass" : "scope~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 242.5, 509.0, 130.0, 130.0 ]
+					"patching_rect" : [ 241.5, 469.0, 130.0, 130.0 ]
 				}
 
 			}
@@ -63,7 +88,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -135,7 +160,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -212,7 +237,7 @@
 												"box" : 												{
 													"code" : "/* [bp~] external from Pd, by Miller Puckette porting */\r\n/* original porting of stkr user found here:\r\ncycling74.com/forums/max-analogs-for-pds-bp-and-hip#reply-58ed2099b7244922ce260a5e */\r\n\r\nsigbp_qcos(f) {\r\n\tif ((f >= -halfpi) && (f <= halfpi)) {\n        g = f*f;\n        return ((( g*g*g/-720. + g*g/24.) - g*0.5) + 1);\n    }\n    else return (0);\r\n}\r\n\r\n\r\nbP(xin, f, Q) { /* 2-pole bandpass filter */\r\n\t\r\n\tHistory prev(0), last(0);\r\n\tomega = f * twopi / samplerate;\t\r\n\t\r\n\toneminusr = minimum(1., (Q < 0.001) ? 1. : (omega / Q));\r\n\tr = 1. - oneminusr;\r\n\t\r\n\tcoef1 = 2. * sigbp_qcos(omega) * r;\r\n\tcoef2 = - r * r;\r\n\tgain = 2. * oneminusr * (oneminusr + r * omega);\r\n\t\r\n\t/* sigbp_perform */\r\n\toutput = xin + coef1 * last + coef2 * prev;\r\n\ty = gain * output;\r\n\tprev = last;\r\n\tlast = output;\r\n\treturn fixdenorm(y);\r\n}\r\n\r\nout1 = bP(in1, freq, q);",
 													"fontface" : 0,
-													"fontname" : "Lucida Console",
+													"fontname" : "<Monospaced>",
 													"fontsize" : 12.0,
 													"id" : "obj-3",
 													"maxclass" : "codebox",
@@ -300,7 +325,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -377,7 +402,7 @@
 												"box" : 												{
 													"code" : "/* [bp~] external from Pd, by Miller Puckette porting */\r\n/* original porting of stkr user found here:\r\ncycling74.com/forums/max-analogs-for-pds-bp-and-hip#reply-58ed2099b7244922ce260a5e */\r\n\r\nsigbp_qcos(f) {\r\n\tif ((f >= -halfpi) && (f <= halfpi)) {\n        g = f*f;\n        return ((( g*g*g/-720. + g*g/24.) - g*0.5) + 1);\n    }\n    else return (0);\r\n}\r\n\r\n\r\nbP(xin, f, Q) { /* 2-pole bandpass filter */\r\n\t\r\n\tHistory prev(0), last(0);\r\n\tomega = f * twopi / samplerate;\t\r\n\t\r\n\toneminusr = minimum(1., (Q < 0.001) ? 1. : (omega / Q));\r\n\tr = 1. - oneminusr;\r\n\t\r\n\tcoef1 = 2. * sigbp_qcos(omega) * r;\r\n\tcoef2 = - r * r;\r\n\tgain = 2. * oneminusr * (oneminusr + r * omega);\r\n\t\r\n\t/* sigbp_perform */\r\n\toutput = xin + coef1 * last + coef2 * prev;\r\n\ty = gain * output;\r\n\tprev = last;\r\n\tlast = output;\r\n\treturn fixdenorm(y);\r\n}\r\n\r\nout1 = bP(in1, freq, q);",
 													"fontface" : 0,
-													"fontname" : "Lucida Console",
+													"fontname" : "<Monospaced>",
 													"fontsize" : 12.0,
 													"id" : "obj-3",
 													"maxclass" : "codebox",
@@ -439,7 +464,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -661,7 +686,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1286,17 +1311,6 @@
 					}
 ,
 					"varname" : "live.gain~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-66",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 91.0, 58.0, 108.0, 20.0 ],
-					"text" : "CCITT dialing tone"
 				}
 
 			}
