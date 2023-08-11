@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 106.0, 640.0, 480.0 ],
+		"rect" : [ 59.0, 106.0, 640.0, 537.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,37 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-13",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 30.0, 12.0, 574.0, 20.0 ],
+					"text" : "PRACTICAL 1 - PEDESTRIANS",
+					"textjustification" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 30.0, 34.0, 574.0, 20.0 ],
+					"text" : "The pedestrian crossing signal is a 2.5kHz sinusoidal wave broken at 100ms with a 50 percent duty cycle",
+					"textjustification" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-24",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 148.5, 178.0, 29.5, 22.0 ],
+					"patching_rect" : [ 148.5, 238.0, 29.5, 22.0 ],
 					"text" : "% 2"
 				}
 
@@ -57,7 +82,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 187.5, 142.25, 29.5, 22.0 ],
+					"patching_rect" : [ 187.5, 202.25, 29.5, 22.0 ],
 					"text" : "+ 1"
 				}
 
@@ -69,7 +94,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 148.5, 142.25, 29.5, 22.0 ],
+					"patching_rect" : [ 148.5, 202.25, 29.5, 22.0 ],
 					"text" : "int"
 				}
 
@@ -82,7 +107,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 135.0, 40.0, 47.0, 20.0 ],
+					"patching_rect" : [ 135.0, 100.0, 47.0, 20.0 ],
 					"text" : "On/Off"
 				}
 
@@ -95,7 +120,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 194.5, 40.0, 47.0, 20.0 ],
+					"patching_rect" : [ 194.5, 100.0, 47.0, 20.0 ],
 					"text" : "Rate"
 				}
 
@@ -108,7 +133,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 50.0, 40.0, 47.0, 20.0 ],
+					"patching_rect" : [ 50.0, 100.0, 47.0, 20.0 ],
 					"text" : "Pitch"
 				}
 
@@ -126,7 +151,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 194.5, 60.0, 50.0, 22.0 ],
+					"patching_rect" : [ 194.5, 120.0, 50.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_initial" : [ 100.0 ],
@@ -157,7 +182,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 50.0, 60.0, 50.0, 22.0 ],
+					"patching_rect" : [ 50.0, 120.0, 50.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_initial" : [ 2500.0 ],
@@ -183,7 +208,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 148.5, 60.0, 20.0, 20.0 ],
+					"patching_rect" : [ 148.5, 120.0, 20.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
@@ -210,7 +235,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 148.5, 223.0, 33.0, 22.0 ],
+					"patching_rect" : [ 148.5, 283.0, 33.0, 22.0 ],
 					"text" : "sig~"
 				}
 
@@ -224,7 +249,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 148.5, 94.0, 65.0, 22.0 ],
+					"patching_rect" : [ 148.5, 154.0, 65.0, 22.0 ],
 					"text" : "metro 100"
 				}
 
@@ -238,7 +263,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 50.0, 223.0, 75.0, 22.0 ],
+					"patching_rect" : [ 50.0, 283.0, 75.0, 22.0 ],
 					"text" : "cycle~ 2500"
 				}
 
@@ -254,7 +279,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 50.0, 349.0, 136.0, 41.0 ],
+					"patching_rect" : [ 50.0, 409.0, 136.0, 41.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_initial" : [ -96 ],
@@ -279,7 +304,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 50.0, 409.5, 45.0, 45.0 ]
+					"patching_rect" : [ 50.0, 469.5, 45.0, 45.0 ]
 				}
 
 			}
@@ -292,7 +317,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 50.0, 262.0, 117.5, 22.0 ],
+					"patching_rect" : [ 50.0, 322.0, 117.5, 22.0 ],
 					"text" : "*~"
 				}
 
@@ -393,7 +418,26 @@
 				}
 
 			}
- ]
+ ],
+		"parameters" : 		{
+			"obj-10" : [ "number[1]", "number[1]", 0 ],
+			"obj-14" : [ "number", "number", 0 ],
+			"obj-3" : [ "toggle", "toggle", 0 ],
+			"obj-5" : [ "live.gain~", "live.gain~", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [  ],
+		"autosave" : 0
 	}
 
 }
